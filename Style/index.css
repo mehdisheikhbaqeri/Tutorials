@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap");
+body {
+  font-family: "Yuji Boku", serif;
+}
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -11,7 +15,7 @@
 .content-table thead tr {
   background: #009879;
   color: #fff;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
 }
 .content-table th,
@@ -27,7 +31,7 @@ td {
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
-.content-table tbody tr {
+.content-table tbody tr.active-row {
   font-weight: 700;
   color: #009879;
 }

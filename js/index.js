@@ -34,7 +34,7 @@ function signYourName(obj) {
 }
 console.log(signYourName(mehdi));
 
-const ava = [
+const tileHand = [
   { tile: "N", score: 1 },
   { tile: "K", score: 5 },
   { tile: "Z", score: 10 },
@@ -47,3 +47,9 @@ function maximumScore(tileHand) {
   return tileHand.reduce((p, c) => p + c.score, 0);
 }
 console.log(maximumScore(tileHand));
+
+let n = 3;
+function sumPolygon(n) {
+  return (n - 2) * 180;
+}
+console.log(sumPolygon(n));

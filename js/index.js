@@ -53,3 +53,10 @@ function sumPolygon(n) {
   return (n - 2) * 180;
 }
 console.log(sumPolygon(n));
+
+let base = 10;
+let height = 7;
+function triArea(base, height) {
+  return (base * height) / 2;
+}
+console.log(triArea(base, height));

@@ -8,16 +8,15 @@
 // }
 
 // console.log(sortDrinkByPrice(drinks));
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 3];
+const arr1 = [1, 2, 4];
+const arr2 = [1, 2, 3];
 function isFirstSuperior(arr1, arr2) {
   let n = arr1.length;
   for (let i = 0; i < n; i++) {
     if (arr1[i] > arr2[i]) {
       return true;
     }
-
-    return false;
   }
+  return false;
 }
 console.log(isFirstSuperior(arr1, arr2));

@@ -125,3 +125,27 @@ function points(twoPointers, threePointers) {
   return two + three;
 }
 console.log(points(twoPointers, threePointers));
+
+// // Find the first number
+// // ?????????????????????????????
+let q = 3;
+let isPrime = true;
+let i = 2;
+while (i < q) {
+  if (q % i == 0) {
+    isPrime = false;
+  }
+  i++;
+}
+console.log(q, isPrime);
+
+function sayHello(name) {
+  console.log("Hello", name);
+}
+sayHello("mehdi");
+
+const add = (a, b) => a + b;
+console.log(add(2, 3));
+
+const addwith5 = (a) => a + 5;
+console.log(addwith5(3));

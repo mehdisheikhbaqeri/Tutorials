@@ -149,3 +149,41 @@ console.log(add(2, 3));
 
 const addwith5 = (a) => a + 5;
 console.log(addwith5(3));
+
+// object
+const student = {
+  firstName: "mehdi",
+  lastName: "sh.baqeri",
+  age: 31,
+  fev: ["manchsterUnited", "footBall"],
+  status: true,
+};
+console.log(student.fev);
+
+student.lastName = "baqeri";
+console.log(student);
+
+// this
+const student2 = {
+  firstName: "mehdi",
+  lastName: "sh.baqeri",
+  age: 31,
+  fev: ["manchsterUnited", "footBall"],
+  status: true,
+
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+
+  seyHello() {
+    return `Hello ${this.fullName()}`;
+  },
+  showFev() {
+    this.fev.forEach((fev, index) => {
+      console.log(`${fev},${index + 1}`);
+    });
+  },
+};
+// console.log(student2.fullName());
+// console.log(student2.seyHello());
+student2.showFev();

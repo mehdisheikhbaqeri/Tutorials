@@ -49,3 +49,23 @@ const obj = {
 for (let m in obj) {
   console.log(m);
 }
+
+// array method
+
+const colorsNumber = ["red", "blue", "green", "seven", "one"];
+// const colorsNumber2 = ["gold", 23];
+
+const result2 = colorsNumber.toString();
+// const result2 = colorsNumber.join("*");
+// const result2 = colorsNumber.pop();    (return last item and del last array)
+// const result2 = colorsNumber.push("black");
+// const result2 = colorsNumber.unshift("brown");
+// delete colorsNumber[2];    (index2 is empty or null)
+// const result2 = colorsNumber.splice(2, 3, "yellow");
+// const result2 = colorsNumber.concat(colorsNumber2);
+// const result2 = colorsNumber.slice(1, 2);  (1th number should writh)
+// const result2 = colorsNumber.slice(4);
+// const result2 = colorsNumber.sort(); (only for string)
+
+console.log(result2);
+// console.log(colorsNumber);

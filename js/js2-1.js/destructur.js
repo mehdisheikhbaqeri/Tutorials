@@ -31,13 +31,3 @@ const cirArea2 = ({ radius }) => {
   return (PI * radius * 2).toFixed(2);
 };
 console.log(cirArea2(circle2));
-
-const pv = {
-  ram: 4,
-  hard: 512,
-  cpu: "none",
-};
-
-const pv = ({ ram, hard, cpu }) => {
-  return `My laptop has ram of ${ram} and hard of ${hard} and cpu of ${cpu}`;
-};

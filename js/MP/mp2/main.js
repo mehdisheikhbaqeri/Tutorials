@@ -5,7 +5,12 @@ function dataValidation() {
   let usernameValue = userNameInput.value;
   let passwordValue = passwordInput.value;
 
-  if (usernameValue.length < 12 || passwordValue < 8) {
+  if (
+    usernameValue.length < 12 ||
+    passwordValue < 8 ||
+    passwordValue ==
+      "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+  ) {
     // alert("error");
     modal.style.display = "inline";
   } else {

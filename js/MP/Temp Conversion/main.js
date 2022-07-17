@@ -7,16 +7,19 @@ const resetButton = document.querySelector(".resetButton");
 const changeButton = document.querySelector(".changeButton");
 
 function conver() {}
-function reset() {}
+function reset() {
+  result.innerHTML = "";
+  converter.value = ""; ///Bug
+}
 function change() {
   if (CantDeg.innerHTML === "°C") {
     CantDeg.innerHTML = "°F";
     FarenDeg.innerHTML = "°C";
-    // converter.setAttribute("placeholder", "°F");
+    // converter.value = "°C";
     document.title = "°F to °C";
   } else {
-    CantDeg.innerHTML = "°F";
-    FarenDeg.innerHTML = "°C";
+    CantDeg.innerHTML = "°C";
+    FarenDeg.innerHTML = "°F";
     // converter.setAttribute("placeholder", "°C");
     document.title = "°C to °F";
   }

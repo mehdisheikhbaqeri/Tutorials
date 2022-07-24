@@ -13,6 +13,10 @@ function addTodo(newValue) {
   let newTrash = document.createElement("i");
   newTrash.className = "fa fa-trash-o delete";
 
+  newTrash.addEventListener("click", function (e) {
+    e.target.parentElement.remove();
+  });
+
   newTodoLi.append(newSpan, newTrash);
   todoUl.append(newTodoLi);
 }

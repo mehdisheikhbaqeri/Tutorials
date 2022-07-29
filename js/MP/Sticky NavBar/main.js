@@ -1,15 +1,16 @@
-const mainNav = document.getElementById("mainNav");
-const logoImg = document.querySelector("img");
+let NavBar = document.getElementById("mainNav");
+let logo = document.querySelector("img");
 
 document.addEventListener("scroll", function () {
+  console.log(document.documentElement.scrollTop);
+
   if (document.documentElement.scrollTop > 0) {
-    logoImg.style.height = "64px";
-    mainNav.classList.add("bg-black");
-    mainNav.classList.add("txt-white");
+    logo.style.height = "60px";
+    NavBar.classList.add("bg-black");
+    NavBar.classList.add("txt-white");
   } else {
-    logoImg.style.height = "84px";
-    mainNav.classList.remove("bg-black");
-    mainNav.classList.remove("txt-white");
+    logo.style.height = "84px";
+    NavBar.classList.remove("bg-black");
+    NavBar.classList.remove("txt-white");
   }
 });
-

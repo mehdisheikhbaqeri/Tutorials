@@ -71,6 +71,15 @@ function btnPages(page, allUesrsArray) {
   if (page === currentPage) {
     button.classList.add("active");
   }
+
+  button.addEventListener("click", function () {
+    currentPage = page;
+    displayUesrsList(allUesrsArray, userListContainer, rowsCount, currentPage);
+
+    let numPage = document.querySelector("button.active");
+    numPage.classList.remove("active");
+    button.classList.add("active");
+  });
   return button;
 }
 

@@ -53,4 +53,26 @@ function displayUesrsList(
   console.log(paginatedUsers);
 }
 
+function setupPagination(allUesrsArray, paginationContainer, rowsCount) {
+  paginationContainer.textContent = " ";
+
+  let pages = Math.ceil(allUesrsArray.length / rowsCount);
+
+  for (let i = 1; i < pages + 1; i++) {
+    let btn = btnPages(i, allUesrsArray);
+    paginationContainer.append(btn);
+  }
+}
+
+function btnPages(page, allUesrsArray) {
+  let button = document.createElement("button");
+  button.textContent = page;
+
+  if (page === currentPage) {
+    button.classList.add("active");
+  }
+  return button;
+}
+
 displayUesrsList(listItems, userListContainer, rowsCount, currentPage);
+setupPagination(listItems, paginationContainer, rowsCount);

@@ -103,7 +103,7 @@ function addProductArray(productId) {
   userBasket.push(mainProduct);
 
   basketProduct(userBasket);
-  calcTotalPrice(userBasket);
+  carcTotalPrice(userBasket);
 
   console.log(userBasket);
 }
@@ -142,6 +142,9 @@ function basketProduct(userBasketArray) {
     basketProductInput.value = product.count;
     basketProductInput.setAttribute("type", "number");
     basketProductInput.setAttribute("min", "1");
+    basketProductInput.addEventListener("change", function () {
+      updateProduct(product.id, basketProductInput.value);
+    });
 
     let basketProductRemove = document.createElement("button");
     basketProductRemove.className = "btn btn-danger";
@@ -174,12 +177,23 @@ removeAllProduct.addEventListener("click", function () {
   basketProduct(userBasket);
 });
 
-function calcTotalPrice (userBasketArray) {
-  let totalPriceValue = 0
+function carcTotalPrice(userBasketArray) {
+  let totalPriceValue = 0;
 
   userBasketArray.forEach(function (product) {
-      totalPriceValue += product.count * product.price
-  })
+    totalPriceValue += product.count * product.price;
+  });
 
-  cartTotalPrice.innerHTML = totalPriceValue
+  cartTotalPrice.textContent = totalPriceValue;
+}
+
+function updateProduct(prodoctId, newCount) {
+  console.log("product id:" + prodoctId + "new count:" + newCount);
+
+  userBasket.forEach(function (product) {
+    if (product.id === prodoctId) {
+      product.count = newCount;
+    }
+  });
+  carcTotalPrice(userBasket);
 }

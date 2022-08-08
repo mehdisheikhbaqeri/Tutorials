@@ -1,5 +1,5 @@
-
-
+@import url("https://fonts.googleapis.com/css2?family=Bahianita&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Bahianita", cursive;
@@ -55,7 +55,7 @@ body {
   text-align: center;
   margin: 0;
   font-size: 4em;
-  font-family: "Booter - Zero Zero";
+  font-family: "Bahianita", cursive;
   font-weight: normal;
   color: white;
 }
@@ -74,7 +74,7 @@ body {
   padding: 0 1.5em;
 }
 .section-header {
-  font-family: "Metal Mania";
+  font-family: "Nanum Brush Script", cursive;
   font-weight: normal;
   color: #333;
   text-align: center;
@@ -215,6 +215,7 @@ body {
 .shop-item-details {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 5px;
 }
 

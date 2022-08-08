@@ -1,12 +1,60 @@
 let products = [
-  { id: 1, title: "Album 1", price: "36.66$", img: "./Images/Album 1.png" },
-  { id: 2, title: "Album 2", price: "29.63$", img: "./Images/Album 2.png" },
-  { id: 3, title: "Album 3", price: "42.66$", img: "./Images/Album 3.png" },
-  { id: 4, title: "Album 4", price: "50.39$", img: "./Images/Album 4.png" },
-  { id: 5, title: "Shirt", price: "50.39$", img: "./Images/Shirt.png" },
-  { id: 6, title: "Coffee", price: "15.39$", img: "./Images/Cofee.png" },
-  { id: 7, title: "Album 5", price: "20.39$", img: "./Images/Album 5.jpg" },
-  { id: 8, title: "Album 6", price: "33.96$", img: "./Images/Album 6.jpg" },
+  {
+    id: 1,
+    title: "Album 1",
+    price: 36.66,
+    img: "./Images/Album 1.png",
+    count: 1,
+  },
+  {
+    id: 2,
+    title: "Album 2",
+    price: 29.63,
+    img: "./Images/Album 2.png",
+    count: 1,
+  },
+  {
+    id: 3,
+    title: "Album 3",
+    price: 42.66,
+    img: "./Images/Album 3.png",
+    count: 1,
+  },
+  {
+    id: 4,
+    title: "Album 4",
+    price: 50.39,
+    img: "./Images/Album 4.png",
+    count: 1,
+  },
+  {
+    id: 5,
+    title: "Shirt",
+    price: 50.39,
+    img: "./Images/Shirt.png",
+    count: 1,
+  },
+  {
+    id: 6,
+    title: "Coffee",
+    price: 15.39,
+    img: "./Images/Cofee.png",
+    count: 1,
+  },
+  {
+    id: 7,
+    title: "Album 5",
+    price: 20.39,
+    img: "./Images/Album 5.jpg",
+    count: 1,
+  },
+  {
+    id: 8,
+    title: "Album 6",
+    price: 33.96,
+    img: "./Images/Album 6.jpg",
+    count: 1,
+  },
 ];
 
 let userBasket = [];
@@ -14,6 +62,7 @@ let userBasket = [];
 const shopContainer = document.querySelector(".shop-items");
 const basketProductsContainer = document.querySelector(".cart-items");
 const removeAllProduct = document.querySelector("#remove-all-product");
+const cartTotalPrice = document.querySelector(".cart-total-price");
 
 products.forEach(function (product) {
   let productContainer = document.createElement("div");
@@ -54,6 +103,7 @@ function addProductArray(productId) {
   userBasket.push(mainProduct);
 
   basketProduct(userBasket);
+  calcTotalPrice(userBasket);
 
   console.log(userBasket);
 }
@@ -89,8 +139,9 @@ function basketProduct(userBasketArray) {
 
     let basketProductInput = document.createElement("input");
     basketProductInput.className = "cart-quantity-input";
-    basketProductInput.value = "1";
+    basketProductInput.value = product.count;
     basketProductInput.setAttribute("type", "number");
+    basketProductInput.setAttribute("min", "1");
 
     let basketProductRemove = document.createElement("button");
     basketProductRemove.className = "btn btn-danger";
@@ -122,3 +173,13 @@ removeAllProduct.addEventListener("click", function () {
   userBasket = [];
   basketProduct(userBasket);
 });
+
+function calcTotalPrice (userBasketArray) {
+  let totalPriceValue = 0
+
+  userBasketArray.forEach(function (product) {
+      totalPriceValue += product.count * product.price
+  })
+
+  cartTotalPrice.innerHTML = totalPriceValue
+}

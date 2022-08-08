@@ -13,6 +13,7 @@ let userBasket = [];
 
 const shopContainer = document.querySelector(".shop-items");
 const basketProductsContainer = document.querySelector(".cart-items");
+const removeAllProduct = document.querySelector("#remove-all-product");
 
 products.forEach(function (product) {
   let productContainer = document.createElement("div");
@@ -94,6 +95,9 @@ function basketProduct(userBasketArray) {
     let basketProductRemove = document.createElement("button");
     basketProductRemove.className = "btn btn-danger";
     basketProductRemove.textContent = "Remove";
+    basketProductRemove.addEventListener("click", function () {
+      removeProductBasket(product.id);
+    });
 
     basketProductInputContainer.append(basketProductInput, basketProductRemove);
     basketProductContainer.append(
@@ -104,3 +108,17 @@ function basketProduct(userBasketArray) {
     basketProductsContainer.append(basketProductContainer);
   });
 }
+function removeProductBasket(prodoctId) {
+  userBasket = newUserBasket = userBasket.filter(function (product) {
+    return product.id !== prodoctId;
+  });
+
+  basketProduct(userBasket);
+
+  console.log(userBasket);
+}
+
+removeAllProduct.addEventListener("click", function () {
+  userBasket = [];
+  basketProduct(userBasket);
+});

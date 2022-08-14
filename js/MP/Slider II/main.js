@@ -20,6 +20,11 @@ let goNext = () => {
   classSwitcher();
 };
 
+let goPrev = () => {
+    active = active == 0 ? slides.length-1  : active - 1;
+    classSwitcher();
+  };
+
 // setInterval
 setInterval(goNext, timer);
 
@@ -31,3 +36,10 @@ points.forEach((point, index) => {
     classSwitcher()
   });
 });
+
+
+// next event 
+next.addEventListener('click',e=>goNext())
+
+// prev event 
+prev.addEventListener('click',e=>goPrev())

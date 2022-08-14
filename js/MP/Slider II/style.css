@@ -8,6 +8,16 @@
 .slide {
   display: none;
   position: relative;
+  animation:  fade 2.5s;
+}
+
+@keyframes fade {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+.animate-this-element {
+  animation: name-of-animation 5s infinite;
 }
 
 .slide.active {

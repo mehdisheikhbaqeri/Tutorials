@@ -1,4 +1,4 @@
-let slideshow = document.querySelector(".slideshow");
+let slideshow = document.querySelector(".slideShow");
 let slides = document.querySelectorAll(".slide");
 let points = document.querySelectorAll(".points>span");
 let prev = document.querySelector(".prev");
@@ -21,25 +21,29 @@ let goNext = () => {
 };
 
 let goPrev = () => {
-    active = active == 0 ? slides.length-1  : active - 1;
-    classSwitcher();
-  };
+  active = active == 0 ? slides.length - 1 : active - 1;
+  classSwitcher();
+};
 
 // setInterval
-setInterval(goNext, timer);
+let runSlide = setInterval(goNext, timer);
 
 // point event
 
 points.forEach((point, index) => {
   point.addEventListener("click", (e) => {
     active = index;
-    classSwitcher()
+    classSwitcher();
   });
 });
 
+// next event
+next.addEventListener("click", (e) => goNext());
 
-// next event 
-next.addEventListener('click',e=>goNext())
+// prev event
+prev.addEventListener("click", (e) => goPrev());
 
-// prev event 
-prev.addEventListener('click',e=>goPrev())
+// mouse
+
+slideshow.addEventListener("mouseover", (e) => clearInterval(runSlide));
+slideshow.addEventListener("mouseleave", (e) => (runSlide = setInterval(goNext, timer)));
